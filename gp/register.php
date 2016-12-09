@@ -114,7 +114,7 @@
     <meta charset = "UTF-8">
     <title>Type Tester</title>
 
-    <link rel = "stylesheet" href = "typeTestLogin.css" media = "screen">
+    <link rel = "stylesheet" href = "typeTestRegister.css" media = "screen">
 	<script scr = "script.js"></script>
 
   </head>

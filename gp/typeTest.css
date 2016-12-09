@@ -333,6 +333,7 @@ th, td {
     border: 1px solid #00ACED;
     overflow: hidden;
     width: 108px;
+	color: black;
 }
 
 /*============== Footer items ==============*/
