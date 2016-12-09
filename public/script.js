@@ -60,7 +60,16 @@ function timerCountdown(){
                 counterDone = true;
                 counting = false;
                 inputBox.disabled = true;
-                window.alert("TIME IS UP! YOUR WPM IS " + wpm);
+                currentWord.innerHTML = "";
+                wordTen.innerHTML     = "";
+                wordNine.innerHTML    = "";
+                wordEight.innerHTML   = "";
+                wordSeven.innerHTML   = wpm;
+                wordSix.innerHTML     = "Time is up! Your WPM is: ";
+                wordFive.innerHTML    = "";
+                wordFour.innerHTML    = "";
+                wordThree.innerHTML   = "";
+                wordTwo.innerHTML     = "";
                 clearInterval(id);
             } else {
                 if (counter < 10) {
