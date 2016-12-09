@@ -115,7 +115,7 @@
 		public function get($table, $where) 
 		{
 			
-			return $this->action('SELECT *', $table, $where); //ToDo: Allow for specific SELECT (SELECT username)
+			return $this->action('SELECT *', $table, $where); 
 			
 		}
 

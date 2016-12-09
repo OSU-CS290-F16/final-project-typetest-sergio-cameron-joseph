@@ -3,6 +3,7 @@
 
 
 	require_once 'core/init.php';
+	
 	if (Session::exists('home')) 
 	{
 		
@@ -15,7 +16,17 @@
 	if ($user->isLoggedIn()) 
 	{
 		
-		
+		$_db = Database::getInstance();
+		$data = $user->data();
+						
+		$_db->insert('leaderboard', array
+		(
+						
+			'username' => $data->username,
+			'score' => Input::get('score')
+							
+		));						
+			
 		
 ?>
 
@@ -38,7 +49,7 @@
         	<li class="navbar-item header">Type Tester</li>
 			<li class="navbar-item navbar-right"><a href = "logout.php">Logout</a></li>
 			<li class="navbar-item navbar-right"><a href = "profile.php?user=<?php echo escape($user->data()->username); ?>">My Account</a></li>			
-        	<li class="navbar-item navbar-right"><a href="leaderboard.html">Leaderboard</a></li>			
+        	<li class="navbar-item navbar-right"><a href="leaderboard.php">Leaderboard</a></li>			
     	</ul>
     </nav>
     </header>
@@ -48,8 +59,12 @@
 			<div class="word-bank">
 			</div>	
 			<span id="timer">Time: 60</span>		
-			<span id="word-count">Word Count: 0</span>				
+			<span name = "wordcount" id="word-count">Word Count: 0</span>				
 			<input onclick="start();" type="text" id="input" spellcheck="off">	
+			<form action = "" method = "post">
+				<input type = "text" name = "score" id="word-submit" value = "">
+				<input type = "submit" value = "Submit Score">				
+			</form>
 		</div>
     </main>
 
@@ -63,10 +78,9 @@
 </html>
 	
 	
-	
 <?php
 
-
+	
 
 	} 
 	else 
@@ -106,7 +120,7 @@
 					</a>
 				</li>
 				<li class = "navbar-item navbar-right">
-					<a href= 'leaderboard.html'>
+					<a href= 'leaderboard.php'>
 						Leaderboard
 					</a>
 				</li>			

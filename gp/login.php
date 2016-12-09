@@ -47,7 +47,7 @@
 				else 
 				{
 					
-					echo "Sorry we could not log you in";
+					echo "Sorry login failed, username or password is incorrect.";
 					
 				}
 				

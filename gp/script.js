@@ -5,6 +5,7 @@ var read = ["the", "of", "to", "and", "a", "in", "is", "it", "you",
 
 var checker;
 var counter;
+var wordcount = 0;
 			
 function words()
 {
@@ -40,6 +41,8 @@ function timer()
 		clearInterval(counter);
 		console.log(count);
 		
+		document.getElementById('word-submit').setAttribute("value", wordcount);
+		
 		return;
 		
 	}
@@ -50,7 +53,7 @@ function timer()
 	
 }
 
-var checknum = 6000;
+var checknum = 600;
 
 function check()
 {
@@ -73,7 +76,7 @@ function check()
 				
 	}	
 	
-	if (checknum === 0)
+	if (checknum <= 0)
 	{
 		
 		clearInterval(checker);
@@ -87,16 +90,16 @@ function check()
 	
 }
 
-var wordcount = 0;
-
 function start()
 {
 
-	var checker=setInterval(check, 10);
+	var checker=setInterval(check, 100);
 	var counter=setInterval(timer, 1000);
 	
 	var firstword = document.querySelector(".none");
 	firstword.setAttribute("class", "first");
+	
+	document.getElementById("input").onclick = "#";
 	
 }
 
