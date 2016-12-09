@@ -70,12 +70,14 @@ main {
 }
 
 .word-bank {
-	margin: 80px auto 10px auto;
-	border: 3px solid #00ACED;
-	background-color: #EDF8FF;
-	box-shadow: 0px 0px 30px #00ACED;
-	height: 100px;
-	width: 80%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 80px auto 10px auto;
+    border: 3px solid #00ACED;
+    background-color: #EDF8FF;
+    box-shadow: 0px 0px 30px #00ACED;
+    height: 100px;
+    width: 80%;
 }
 
 .word-bank  span {
@@ -90,14 +92,29 @@ main {
 	background-color: #BAD4FF;
 }
 
+#timer{
+    margin-left: 27.5%;
+}
+
 input {
-	margin-left: 30%;
-	height: 30px;
-	width: 40%;
-	font-size: 24px;
-	border: 2px solid #00ACED;
-	background-color: #EDF8FF;
-	box-shadow: 0px 0px 20px #00ACED;
+    height: 30px;
+    width: 40%;
+    font-size: 24px;
+    border: 2px solid #00ACED;
+    background-color: #EDF8FF;
+    box-shadow: 0px 0px 20px #00ACED;
+}
+
+button{
+    background-color: #00ACED;
+    border: 2px solid #00ACED;
+    color: white;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /*============== Footer items ==============*/
