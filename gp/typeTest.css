@@ -1,0 +1,196 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+/*============== Navbar items ==============*/
+/*                                          */
+/*==========================================*/
+ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	overflow: hidden;
+	background: #00ACED;
+}
+
+navbar-list>ul{
+	float: right;
+}
+
+.navbar-item{
+	font-size: 28px;
+	float: left;
+}
+
+.navbar-right{
+	float: right;
+}
+.navbar-item a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+.navbar-right a:hover {
+    background-color: #444;
+  	transition: .5s ease-in-out;
+}
+
+.header{
+	font-family: 'Arial Black';
+	color: white;
+	padding: 10px 16px;
+}
+
+/*=============== Main items ===============*/
+/*                                          */
+/*==========================================*/
+
+html {
+	min-height: 100%;
+	min-width: 675px;
+	background-color: #BCE5FF;
+	position: relative;
+}
+
+main {
+  display: flex;
+  padding: 20px 20px 100px 20px;
+  min-height: 560px;
+}
+
+.tester {
+    width: 100%;
+}
+
+.word-bank {
+	margin: 100px auto 10px auto;
+	border: 3px solid #00ACED;
+	background-color: #EDF8FF;
+	height: 120px;
+	width: 80%;
+	overflow: hidden;
+}
+
+.word-bank  span {
+    display: inline-block;
+	margin: 5px;
+	padding: 5px;
+	font-size: 30px;
+}
+
+.first {
+	border-radius: 10px;
+	background-color: #BAD4FF;
+}
+
+.field
+{
+	margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+input 
+{
+	margin-left: 30%;
+	height: 30px;
+	width: 40%;
+	font-size: 24px;
+	border: 2px solid #00ACED;
+	background-color: #EDF8FF;
+}
+
+#word-count
+{
+	padding: 3px;
+	font-size: 20px;
+	border: 2px solid #00ACED;
+	background-color: #EDF8FF;
+}
+
+#timer
+{
+	margin-left: 30%;
+	padding: 3px;
+	font-size: 20px;
+	border: 2px solid #00ACED;
+	background-color: #EDF8FF;
+}
+
+form
+{
+	margin: auto;
+	margin-top: 100px;
+	border: 5px solid #00ACED;
+	min-width: 500px;
+	max-width: 500px;
+	box-shadow: 0px 0px 20px black;
+}
+
+.container 
+{
+    padding: 20px;
+	font-family: 'Helvetica';
+}
+
+.center
+{
+	text-align: center;
+}
+
+.change-pass a
+{
+	background-color: #00ACED;
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.change-pass a:hover
+{
+	background-color: #00ACED;
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+	box-shadow: 0px 0px 5px black;
+}
+
+.change-info a
+{
+	background-color: #00ACED;
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.change-info a:hover
+{
+	background-color: #00ACED;
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+	box-shadow: 0px 0px 5px black;
+}
+
+/*============== Footer items ==============*/
+/*                                          */
+/*==========================================*/
+
+footer {
+  background-color: #00ACED;
+  color: white;
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+}
+
+.footerText {
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  padding-right: 25px;
+  font-weight: 200;
+}

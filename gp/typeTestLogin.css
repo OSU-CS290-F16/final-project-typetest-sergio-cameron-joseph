@@ -1,0 +1,210 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+/*============== Navbar items ==============*/
+/*                                          */
+/*==========================================*/
+ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	overflow: hidden;
+	background: #00ACED;
+}
+
+navbar-list>ul{
+	float: right;
+}
+
+.navbar-item{
+	font-size: 28px;
+	float: left;
+}
+
+.navbar-right{
+	float: right;
+}
+.navbar-item a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+.navbar-right a:hover {
+    background-color: #444;
+    transition: .5s ease-in-out;
+}
+
+.header{
+	font-family: 'Arial Black';
+	color: white;
+	padding: 10px 16px;
+}
+
+form
+{
+	margin: auto;
+	margin-top: 100px;
+	border: 5px solid #00ACED;
+	min-width: 500px;
+	max-width: 500px;
+	box-shadow: 0px 0px 20px black;
+}
+
+.container 
+{
+    padding: 20px;
+	font-family: 'Helvetica';
+}
+
+label
+{
+	color: white;
+	font-size: 20px;
+}
+
+#remember
+{
+	font-size: 16px;
+}
+
+input[type=submit]
+{
+    background-color: #00ACED;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	font-size: 20px;
+}
+
+input[type=submit]:hover
+{
+    background-color: #00ACED;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	font-size: 20px;
+	box-shadow: 0px 0px 5px black;
+}
+
+input[type=checkbox]
+{
+    margin-top: 20px;
+   	font-size: 16px;
+}
+
+input[type=checkbox]:hover
+{
+    margin-top: 20px;
+   	font-size: 16px;
+	box-shadow: 0px 0px 5px black;
+}
+
+input[type=text], input[type=password]
+{
+    width: 100%;
+    padding: 5px 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 3px solid #00ACED;
+    box-sizing: border-box;
+	background: #FFFFFF;
+	color: black;
+	font-size: 16px;
+}
+
+textarea:focus, input:focus
+{
+    outline: none;
+}
+
+input[type=text]:hover, input[type=password]:hover
+{
+    width: 100%;
+    padding: 5px 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 3px solid #00ACED;
+    box-sizing: border-box;
+	background: #FFFFFF;
+	color: black;
+	font-size: 16px;
+	box-shadow: 0px 0px 5px black;
+}
+
+:-webkit-input-placeholder 
+{
+   color: black;
+}
+
+:-ms-input-placeholder 
+{  
+   color: black;  
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active 
+{
+	-webkit-text-fill-color: black;
+    -webkit-box-shadow: 0 0 10px 10000px #FFFFFF; inset !important;
+}
+
+input:focus {
+
+    background-color: #FFFFFF;
+
+}
+
+::selection 
+{ 
+	background: #aaaaaa;
+	color: black;
+}
+
+/*=============== Main items ===============*/
+/*                                          */
+/*==========================================*/
+
+html {
+	min-height: 100%;
+	min-width: 675px;
+	background-color: #BCE5FF;
+	position: relative;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px 100px 20px;
+  min-height: 560px;
+}
+/*============== Footer items ==============*/
+/*                                          */
+/*==========================================*/
+
+footer {
+  background-color: #00ACED;
+  color: white;
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+}
+
+.footerText {
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  padding-right: 25px;
+  font-weight: 200;
+}
