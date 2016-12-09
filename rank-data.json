@@ -1,0 +1,73 @@
+{
+	"ranks": {
+		"1":{
+			"rank": "1",
+			"userName": "temp1",
+			"wpm": "144",
+			"date": "12/6/16"
+		},
+		
+		"2":{
+			"rank": "2",
+			"userName": "temp2",
+			"wpm": "140",
+			"date": "12/6/16"
+		},
+		
+		"3":{
+			"rank": "3",
+			"userName": "temp3",
+			"wpm": "131",
+			"date": "12/4/16"
+		},
+		
+		"4":{
+			"rank": "4",
+			"userName": "temp4",
+			"wpm": "127",
+			"date": "12/6/16"
+		},
+		
+		"5":{
+			"rank": "5",
+			"userName": "temp5",
+			"wpm": "124",
+			"date": "12/2/16"
+		},
+		
+		"6":{
+			"rank": "6",
+			"userName": "temp6",
+			"wpm": "123",
+			"date": "12/1/16"
+		},
+		
+		"7":{
+			"rank": "7",
+			"userName": "temp7",
+			"wpm": "113",
+			"date": "12/7/16"
+		},
+		
+		"8":{
+			"rank": "8",
+			"userName": "temp8",
+			"wpm": "104",
+			"date": "12/9/16"
+		},
+		
+		"9":{
+			"rank": "9",
+			"userName": "temp9",
+			"wpm": "98",
+			"date": "12/12/16"
+		},
+		
+		"10":{
+			"rank": "10",
+			"userName": "temp10",
+			"wpm": "68",
+			"date": "12/11/16"
+		}
+	}
+}
