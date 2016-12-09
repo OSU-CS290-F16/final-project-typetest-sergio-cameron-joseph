@@ -110,7 +110,9 @@ function updateWord() {
 
 //if input box is selected, timer starts
 inputBox.addEventListener('click', function () {
-   timerCountdown();
+   inputBox.addEventListener('keydown', function () {
+        timerCountdown();
+    });
 });
 
 //if "f5" button is selected, reset timer and change words
