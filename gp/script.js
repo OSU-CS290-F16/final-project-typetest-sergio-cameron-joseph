@@ -1,108 +1,136 @@
-var read = ["the", "of", "to", "and", "a", "in", "is", "it", "you", 
-			"that", "he", "was", "for", "on", "are", "with", "as", 
-			"I", "his", "they", "be", "at", "one", "have", "this", 
-			"from", "or", "had", "by", "hot"];
+/*********************************************************
+ * File Overview:
+ * Generates the actual WPM Test and allows user input
+ *
+ * Dependencies:
+ * Index.html (homepage), array.js, server.js
+ *
+ * Outputs:
+ * Variable "wpm" (to be stored in user's data)
+*********************************************************/
 
-var checker;
-var counter;
-var wordcount = 0;
-			
-function words()
-{
-	for(i = 0; i < 300; i++)
-	{
-		
-		var rand = Math.floor((Math.random() * 30)); 	
-		
-		var WordBank = document.getElementsByClassName("word-bank");
-		var Span = document.createElement("span");
-		
-		Span.classList.add("none");
-		WordBank[0].appendChild(Span);
-		
-		var word = read[rand];
-		Span.textContent = word;
-		
-		console.log(read[rand]);		
-		
-	}
-	
+//Get the ten placeholders
+var currentWord =   document.getElementById("first");
+var wordTwo     =  document.getElementById("second");
+var wordThree   =   document.getElementById("third");
+var wordFour    =  document.getElementById("fourth");
+var wordFive    =   document.getElementById("fifth");
+var wordSix     =   document.getElementById("sixth");
+var wordSeven   = document.getElementById("seventh");
+var wordEight   =  document.getElementById("eighth");
+var wordNine    =   document.getElementById("ninth");
+var wordTen     =   document.getElementById("tenth");
+
+//Variables for  timer
+var inputBox  = document.getElementById("input");
+var countdown = document.getElementById("timer");
+var counting  = false;
+var counterDone = false;
+
+//Variables for refresh
+var redo = document.getElementById("f5");
+
+//WPM count variable
+var wpm;
+
+//Populate initially
+refresh();
+
+//returns a random word from the array
+function selectWord() {
+    var randomNumber = Math.floor(Math.random() * 501);
+    var randomWord   = array[randomNumber];
+    console.log(randomWord);
+    return randomWord;
 }
 
+//Starts/resets timer
+function timerCountdown(){
+    var counter = 60;
+    //var counting is enabled/disabled depending on reset
+    counting = true;
+    var id = setInterval(function() {
+        if (counting == false)
+        {
+            clearInterval(id);
+        }
+        else {
+            counter--;
+            if (counter < 0) {
+                counterDone = true;
+                counting = false;
+                inputBox.disabled = true;
+				document.getElementById('word-submit').setAttribute("value", wpm);
+				document.getElementsByClassName('hidden')[0].setAttribute("class", "none");
+                window.alert("TIME IS UP! YOUR WPM IS " + wpm);
+                clearInterval(id);
+            } else {
+                if (counter < 10) {
+                    countdown.innerHTML = "0" + counter.toString();
+                }
+                else {
+                    countdown.innerHTML = counter.toString();
+                }
+            }
+        }
+    }, 1000)
+}
+//Initial population and repopulation depending if f5 button is pressed
+function refresh() {
+    inputBox.disabled = false;
+    wordTen.innerHTML     = selectWord();
+    wordNine.innerHTML    = selectWord();
+    wordEight.innerHTML   = selectWord();
+    wordSeven.innerHTML   = selectWord();
+    wordSix.innerHTML     = selectWord();
+    wordFive.innerHTML    = selectWord();
+    wordFour.innerHTML    = selectWord();
+    wordThree.innerHTML   = selectWord();
+    wordTwo.innerHTML     = selectWord();
+    currentWord.innerHTML = selectWord();
 
-var count = 60;
-
-function timer()
-{	
-	
-    if (count === 0)
-	{
-		
-		clearInterval(counter);
-		console.log(count);
-		
-		document.getElementById('word-submit').setAttribute("value", wordcount);
-		
-		return;
-		
-	}
-	
-    count = count - 1;
-
-    document.getElementById("timer").innerHTML= "Time: " + count;	
-	
+    var counter = 60;
+    counting = false;
+    countdown.innerHTML = counter.toString();
+    wpm = 0;
+    
 }
 
-var checknum = 600;
-
-function check()
-{
-
-	console.log(document.getElementsByClassName("first")[0].innerText);
-	document.getElementById("word-count").innerHTML= "Word Count: " + wordcount;
-	
-	if((document.getElementById('input').value === document.getElementsByClassName("first")[0].innerText) && (checknum > 0))
-	{
-		
-		wordcount++;
-		
-		document.getElementById("word-count").innerHTML= "Word Count: " + wordcount;	
-		document.getElementsByClassName("first")[0].remove();
-		
-		var firstword = document.querySelector(".none");
-		firstword.setAttribute("class", "first");
-		
-		document.getElementById('input').value = "";
-				
-	}	
-	
-	if (checknum <= 0)
-	{
-		
-		clearInterval(checker);
-		console.log(checknum);		
-		
-		return;
-		
-	}
-	
-	checknum = checknum - 1;
-	
+//Called whenever user presses spacebar
+function updateWord() {
+    currentWord.innerHTML =   wordTwo.innerHTML;
+    wordTwo.innerHTML     = wordThree.innerHTML;
+    wordThree.innerHTML   =  wordFour.innerHTML;
+    wordFour.innerHTML    =  wordFive.innerHTML;
+    wordFive.innerHTML    =   wordSix.innerHTML;
+    wordSix.innerHTML     = wordSeven.innerHTML;
+    wordSeven.innerHTML   = wordEight.innerHTML;
+    wordEight.innerHTML   =  wordNine.innerHTML;
+    wordNine.innerHTML    =   wordTen.innerHTML;
+    wordTen.innerHTML     =        selectWord();
 }
 
-function start()
-{
+//if input box is selected, timer starts
+inputBox.addEventListener('click', function () {
+   timerCountdown();
+});
 
-	var checker=setInterval(check, 100);
-	var counter=setInterval(timer, 1000);
-	
-	var firstword = document.querySelector(".none");
-	firstword.setAttribute("class", "first");
-	
-	document.getElementById("input").onclick = "#";
-	
-}
+//if "f5" button is selected, reset timer and change words
+redo.addEventListener('click', function () {
+    refresh();
+});
 
-
-
-
+//If space is pushed,  compare input to actual value, change wpm and reset input box
+inputBox.onkeyup = function(e){
+    if(e.keyCode == 32){
+        //console.log("before update: " + currentWord.innerHTML.trim());
+        //console.log("input value: " + inputBox.value.trim());
+        if (inputBox.value.trim() == currentWord.innerHTML.trim()){
+            wpm++
+            //console.log("wpm: " + wpm);
+        }
+        inputBox.value = "";
+        updateWord();
+        //console.log("after update: " + currentWord.innerHTML.trim());
+    }
+};

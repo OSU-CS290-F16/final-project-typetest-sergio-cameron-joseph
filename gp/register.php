@@ -123,7 +123,7 @@
   	<nav>
         <ul class = "navbar-list">
         	<li class = "navbar-item header">Type Tester</li>
-        	<li class = "navbar-item navbar-right"><a href = "leaderboard.html">Leaderboard</a></li>			
+        	<li class = "navbar-item navbar-right"><a href = "leaderboard.php">Leaderboard</a></li>			
         	<li class = "navbar-item navbar-right"><a href = "index.php">Home</a></li>
     	</ul>
     </nav>

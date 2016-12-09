@@ -18,31 +18,36 @@
 		
 		$_db = Database::getInstance();
 		$data = $user->data();
-						
-		$_db->insert('leaderboard', array
-		(
-						
-			'username' => $data->username,
-			'score' => Input::get('score')
-							
-		));						
+		
+		if(Input::get('score') != 0)
+		{
 			
+			$_db->insert('leaderboard', array
+			(
+				
+				'username' => $data->username,
+				'score' => Input::get('score'),
+				'dates' => date('Y-m-d H:i:s')
+				
+			));			
+			
+		}
+
+		
 		
 ?>
 
 
-	
-<!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="UTF-8">
     <title>Type Tester</title>
 
-    <link rel="stylesheet" href="typeTest.css" media="screen">
-	<script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" media="screen">
 
   </head>
-   <body onload="words()">
+  <body>
     <header>
   	<nav>
         <ul class="navbar-list">
@@ -57,12 +62,22 @@
     <main>
 		<div class="tester">
 			<div class="word-bank">
-			</div>	
-			<span id="timer">Time: 60</span>		
-			<span name = "wordcount" id="word-count">Word Count: 0</span>				
-			<input onclick="start();" type="text" id="input" spellcheck="off">	
-			<form action = "" method = "post">
-				<input type = "text" name = "score" id="word-submit" value = "">
+				<span class = "first" word="0" id="first"></span>
+				<span word="1" id="second"></span>
+                <span word="2" id="third"></span>
+                <span word="3" id="fourth"></span>
+                <span word="4" id="fifth"></span>
+                <span word="5" id="sixth"></span>
+                <span word="6" id="seventh"></span>
+                <span word="7" id="eighth"></span>
+                <span word="8" id="ninth"></span>
+                <span word="9" id="tenth"></span>
+			</div>
+			<span><button id="timer" alt="Click to hide"></button></span>
+			<input type="text" id="input" spellcheck="off">
+			<span><button id ="f5">F5</button></span>
+			<form class = "hidden" action = "" method = "post">
+				<input class = "hidden" type = "text" name = "score" id="word-submit" value = "">
 				<input type = "submit" value = "Submit Score">				
 			</form>
 		</div>
@@ -75,8 +90,13 @@
     </footer>
     
   </body>
-</html>
+  
+  <script src="array.js"></script>
+  <script src="script.js"></script>
+
 	
+</html>
+
 	
 <?php
 
@@ -98,8 +118,7 @@
     <meta charset="UTF-8">
     <title>Type Tester</title>
 
-    <link rel="stylesheet" href="typeTest.css" media="screen">
-	<script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" media="screen">
 
   </head>
    <body>
@@ -130,8 +149,23 @@
 
     <main>
 		<div class="tester">
-			<div class="word-bank"></div>
-			<input type="text" placeholder="Login to take test" id="input" spellcheck="off">
+			<div class="word-bank">
+				<span class = "first" word="0" id="first"></span>
+				<span word="1" id="second"></span>
+                <span word="2" id="third"></span>
+                <span word="3" id="fourth"></span>
+                <span word="4" id="fifth"></span>
+                <span word="5" id="sixth"></span>
+                <span word="6" id="seventh"></span>
+                <span word="7" id="eighth"></span>
+                <span word="8" id="ninth"></span>
+                <span word="9" id="tenth"></span>
+			</div>
+			<span><button id="timer" alt="Click to hide">60</button></span>
+			<input type="text" id="input" spellcheck="off">
+			<span><button id ="f5">F5</button></span>
+			<form class = "hidden" action = "" method = "post">			
+			</form>
 		</div>
     </main>
 
@@ -142,6 +176,10 @@
     </footer>
     
   </body>
+  
+  <script src="array.js"></script>
+  <script src="script.js"></script>
+  
 </html>
 
 

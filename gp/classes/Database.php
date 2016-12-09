@@ -85,7 +85,7 @@
 		{
 			
 			if (count($where) === 3) 
-			{	//Allow for no where
+			{	
 		
 				$operators = array('=','>','<','>=','<=','<>');
 

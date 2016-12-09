@@ -28,3 +28,13 @@ CREATE TABLE usersSessions
 	hash			varchar(50) NOT NULL
 	
 );
+
+CREATE TABLE leaderboard 
+(
+
+	ID				int 		NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	username		varchar(24) NOT NULL,
+	score			int 		NOT NULL,
+	dates     		datetime    NOT NULL
+	
+);
